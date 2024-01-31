@@ -8,23 +8,23 @@ import { gsap } from "gsap";
 
 export function Shapes() {
   return (
-    <div className="items-center justify-center col-span-1 col-start-1 -mt-9 aspect-square md:row-span-1 md:row-start-1 md:mt-0 pt-10">
+    <div className="row-span-1 row-start-1 -mt-9 aspect-square md:col-span-1 md:col-start-2 md:mt-0">
       <Canvas
         className="z-0"
         shadows
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
-        camera={{ position: [0, 0, 20], fov: 50, near: 1, far: 40 }}
-
+        camera={{ position: [0, 0, 25], fov: 30, near: 1, far: 40 }}
       >
         <Suspense fallback={null}>
           <Geometries />
           <ContactShadows
-            position={[0, -3.5, 0]}
-            opacity={0.65}
-            scale={40}
+            position={[0, -5.5, 0]}
+            opacity={1.45}
+            scale={80}
             blur={1}
-            far={9}
+            far={21}
+            color={0x003739}
           />
           <Environment preset="studio" />
         </Suspense>
@@ -37,7 +37,7 @@ function Geometries() {
   const geometries = [
     {
       position: [0, 0, 0],
-      r: 0.9,
+      r: 0.5,
       geometry: new THREE.IcosahedronGeometry(3), // Gem
     },
     {
@@ -63,7 +63,11 @@ function Geometries() {
   ];
 
   const materials = [
-    new THREE.MeshStandardMaterial({ color: 0x2d3436, roughness: 0.3, metalness: 0.8 }),
+    new THREE.MeshStandardMaterial({
+      roughness: 0.2,
+      metalness: 0.8,
+      color: 0x2d3436,
+    }),
   ];
 
   return geometries.map(({ position, r, geometry }) => (
@@ -95,7 +99,7 @@ function Geometry({ r, position, geometry, materials }) {
       y: `+=${gsap.utils.random(0, 2)}`,
       z: `+=${gsap.utils.random(0, 2)}`,
       duration: 1.3,
-      ease: "elastic.out(1,0.3)",
+      ease: "elastic.out(2,0.3)",
       yoyo: true,
     });
 
@@ -118,7 +122,7 @@ function Geometry({ r, position, geometry, materials }) {
         y: 0,
         z: 0,
         duration: gsap.utils.random(0.8, 1.2),
-        ease: "elastic.out(1,0.3)",
+        ease: "elastic.out(2,1.9)",
         delay: gsap.utils.random(0, 0.5),
       });
     });

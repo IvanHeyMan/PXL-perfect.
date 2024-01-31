@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
@@ -29,7 +29,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           opacity: 1,
           rotate: 0,
           margin: 14,
-          ease: "elastic.out(1,0.3)",
+          ease: "elastic.out(8,0.7)",
           duration: 1.5,
           transformOrigin: "left top",
           stagger: { each: 0.1, from: "random" },
@@ -57,13 +57,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       ref={component} 
     >
-      <div className="flex flex-col items-center justify-center min-h-[80vh]">
+      <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2 justify-center">
         <Shapes />
-        <div className="mt-10">
+        <div className="col-start-1 md:row-start-1 " data-speed=".2">
           <h1
-            className="mb-auto text-[clamp(3rem,20vmin,20rem)] text-center font-extrabold leading-none tracking-normal"
+            className="mb-auto mt-auto text-[clamp(3rem,10vmin,20rem)] text-center font-extrabold leading-none tracking-normal"
           >
-            <span className="block text-slate-50 text-7xl">
+            <span className="block text-slate-300 text-5xl md:text-7xl">
               {renderLetters(slice.primary.slogan, "")}
             </span>
           </h1>

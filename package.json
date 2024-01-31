@@ -16,6 +16,7 @@
     "@react-three/drei": "^9.96.5",
     "@react-three/fiber": "^8.15.15",
     "@types/three": "^0.160.0",
+    "clsx": "^2.1.0",
     "gsap": "^3.12.5",
     "next": "14.1.0",
     "react": "^18",
