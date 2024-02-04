@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 
@@ -15,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-black text-slate-50 opacity-90">
-      <body className={josefin.className}>{children}</body>
+    <html lang="en" className="bg-black text-slate-50 opacity-95">
+      <body 
+        className={josefin.className}>
+          <Header />
+          {children}
+      </body>
     </html>
   );
 }

@@ -1,23 +1,17 @@
 import React from "react";
 import clsx from "clsx";
 
-
-
-
 type BoundedProps = {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
-
 };
-
 
 const Bounded = React.forwardRef<HTMLDivElement, BoundedProps>(
   ({ as: Comp = "section", className, children, ...restProps }, ref) => {
     return (
       <Comp
         ref={ref}
-        style={{backgroundImage: "url(/bg-hero3.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center", width: "100vw", height: "100vh"}}
         className={clsx("px-4 py-10 md:px-6 md:py-14 lg:py-16", className)}
         {...restProps}
       >

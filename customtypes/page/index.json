@@ -1,29 +1,32 @@
 {
-  "id": "homepage",
-  "label": "Homepage",
+  "id": "page",
+  "label": "Page",
   "format": "page",
-  "repeatable": false,
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "tech_list": {
-              "type": "SharedSlice"
-            },
             "seo": {
               "type": "SharedSlice"
             },
             "development": {
               "type": "SharedSlice"
             },
-            "design": {
+            "tech_list": {
               "type": "SharedSlice"
             },
-            "hero": {
+            "design": {
               "type": "SharedSlice"
             }
           }
