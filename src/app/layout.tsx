@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-black text-slate-50 opacity-95">
+    <html lang="en" className="bg-black text-slate-50 opacity-90">
       <body 
         className={josefin.className}>
           <Header />

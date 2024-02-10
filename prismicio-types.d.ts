@@ -343,14 +343,14 @@ export interface DesignSliceDefaultPrimary {
   button_link: prismic.LinkField;
 
   /**
-   * Design image field in *Design → Primary*
+   * Image field in *Design → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: design.primary.design_image
+   * - **API ID Path**: design.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  design_image: prismic.ImageField<never>;
+  image: prismic.ImageField<never>;
 }
 
 /**
@@ -381,6 +381,61 @@ type DesignSliceVariation = DesignSliceDefault;
 export type DesignSlice = prismic.SharedSlice<"design", DesignSliceVariation>;
 
 /**
+ * Primary content in *Development → Primary*
+ */
+export interface DevelopmentSliceDefaultPrimary {
+  /**
+   * Heading field in *Development → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: development.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *Development → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: development.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Text field in *Development → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: development.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Development → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: development.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Image field in *Development → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: development.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for Development Slice
  *
  * - **API ID**: `default`
@@ -389,7 +444,7 @@ export type DesignSlice = prismic.SharedSlice<"design", DesignSliceVariation>;
  */
 export type DevelopmentSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<DevelopmentSliceDefaultPrimary>,
   never
 >;
 
@@ -463,6 +518,61 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Seo → Primary*
+ */
+export interface SeoSliceDefaultPrimary {
+  /**
+   * Heading field in *Seo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: seo.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *Seo → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: seo.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Text field in *Seo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: seo.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Seo → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: seo.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Image field in *Seo → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: seo.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for Seo Slice
  *
  * - **API ID**: `default`
@@ -471,7 +581,7 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export type SeoSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<SeoSliceDefaultPrimary>,
   never
 >;
 
@@ -584,6 +694,7 @@ declare module "@prismicio/client" {
       DesignSliceVariation,
       DesignSliceDefault,
       DevelopmentSlice,
+      DevelopmentSliceDefaultPrimary,
       DevelopmentSliceVariation,
       DevelopmentSliceDefault,
       HeroSlice,
@@ -591,6 +702,7 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       SeoSlice,
+      SeoSliceDefaultPrimary,
       SeoSliceVariation,
       SeoSliceDefault,
       TechListSlice,

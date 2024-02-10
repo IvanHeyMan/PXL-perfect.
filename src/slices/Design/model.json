@@ -43,10 +43,10 @@
             "select": null
           }
         },
-        "design_image": {
+        "image": {
           "type": "Image",
           "config": {
-            "label": "Design image",
+            "label": "Image",
             "constraint": {},
             "thumbnails": []
           }
