@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "social",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat ad nisi qui labore commodo consequat labore nulla velit laboris do. Incididunt sint id voluptate excepteur est qui Lorem minim tempor labore dolore quis. Elit cupidatat fugiat in."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

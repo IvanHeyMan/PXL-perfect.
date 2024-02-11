@@ -62,6 +62,7 @@ const Design = ({ slice }: DesignProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="overflow-hidden"
     >
       <div className="h-[20vh]"></div>
       <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr] overflow-hidden cube-image">

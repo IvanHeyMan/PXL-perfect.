@@ -32,7 +32,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           pin: true, // pin the trigger element while active
           start: "top bottom",
           end: "bottom top",
-          scrub: 4,
+          scrub: 1,
         },
       });
 
@@ -41,15 +41,15 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(600, 400)
-              : gsap.utils.random(-600, -400);
+              ? gsap.utils.random(800, 200)
+              : gsap.utils.random(-800, -200);
           },
         },
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(-600, -400)
-              : gsap.utils.random(600, 400);
+              ? gsap.utils.random(-800, -200)
+              : gsap.utils.random(800, 200);
           },
           ease: "power1.inOut",
         },
@@ -77,14 +77,14 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           className="tech-row mb-8 flex items-center justify-center gap-4 text-teal-900"
           aria-label={tech_name || ""}
         >
-          {Array.from({ length: 14 }, (_, index) => (
+          {Array.from({ length: 12 }, (_, index) => (
             <React.Fragment key={index}>
               <span
                 className={
                   "tech-item text-8xl font-extrabold uppercase tracking-tighter"
                 }
                 style={{
-                  color: index === 7 && tech_color ? tech_color : "inherit",
+                  color: index === 6 && tech_color ? tech_color : "inherit", 
                 }}
               >
                 {tech_name}
@@ -97,6 +97,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           ))}
         </div>
       ))}
+      <div className="h-[100vh]"></div>
     </section>
   );
 };

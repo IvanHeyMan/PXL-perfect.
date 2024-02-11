@@ -299,6 +299,61 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *Contact → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Heading field in *Contact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *Contact → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
  * Primary content in *Design → Primary*
  */
 export interface DesignSliceDefaultPrimary {
@@ -689,6 +744,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavItemItem,
       AllDocumentTypes,
+      ContactSlice,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       DesignSlice,
       DesignSliceDefaultPrimary,
       DesignSliceVariation,

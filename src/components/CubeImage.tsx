@@ -76,7 +76,7 @@ export default function CubeImage({
   return (
     <div ref={component} className={clsx("relative h-full w-full", className)}>
       <div
-        className="cubeimage aspect-square overflow-hidden " // removed border to allow full transparent image, this is the deleted border styling... rounded-3xl border-2 border-slate-700 opacity-0
+        className="cubeimage aspect-square overflow-hidden rounded-3xl" // removed border to allow full transparent image, this is the deleted border styling... rounded-3xl border-2 border-slate-700 opacity-0
         style={{ perspective: "500px", perspectiveOrigin: "150% 150%" }}
       >
         <PrismicNextImage
