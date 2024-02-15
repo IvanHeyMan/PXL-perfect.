@@ -62,7 +62,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       </div>
       <div className="col-start-1 md:row-start-1 -mt-8" data-speed=".2">
         <h1
-          className="mb-2 -mt-8 text-[clamp(3rem,10vmin,20rem)] text-center font-extrabold leading-none tracking-normal"
+          className="mb-2 -mt-8 text-[clamp(3rem,20vmin,20rem)] text-center font-extrabold leading-none tracking-normal"
         >
           <span className="block text-slate-300 text-4xl md:text-6xl">
             {renderLetters(slice.primary.slogan, "title")}

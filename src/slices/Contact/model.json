@@ -19,13 +19,39 @@
             "placeholder": ""
           }
         },
-        "description": {
-          "type": "StructuredText",
+        "first": {
+          "type": "Text",
           "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "label": "First",
+            "placeholder": ""
+          }
+        },
+        "last": {
+          "type": "Text",
+          "config": {
+            "label": "Last",
+            "placeholder": ""
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        },
+        "message": {
+          "type": "Text",
+          "config": {
+            "label": "Message",
+            "placeholder": ""
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
           }
         }
       },

@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 
 
+
 type BoundedProps = {
   as?: React.ElementType;
   className?: string;
@@ -17,15 +18,14 @@ const BoundedHero = React.forwardRef<HTMLDivElement, BoundedProps>(
       <Comp
         ref={ref}
         // style={{backgroundImage: "url(/bg-hero3.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center", width: "100vw", height: "100vh",}}
-        className={clsx("relative px-4 py-10 md:px-6 md:py-14 lg:py-16", className)}
+        className={clsx("relative min-h-[110vh]", className)}
         {...restProps}
       >
-        <div className="mx-auto w-full max-w-7xl">
+        <div className="mx-auto my-auto h-full max-h-7xl w-full max-w-7xl">
           <Image
           src="/bg-hero3.png"
           alt="Picture of a Forest"
-          fill = {true}
-          style={{objectFit: "cover",}}
+          fill={true}
           quality={75}
           />
           {children}

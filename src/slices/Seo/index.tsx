@@ -35,7 +35,7 @@ const Seo = ({ slice }: SeoProps): JSX.Element => {
           pin: true,// pin the trigger element while active
           trigger: ".sci-fi-image",
           scrub: 1,
-          markers: true,
+
         },
       });
 
@@ -44,7 +44,7 @@ const Seo = ({ slice }: SeoProps): JSX.Element => {
         y: 1400,
         duration: 4,
         ease: "power1.inOut",
-        markers: true,
+
       });
 
     },);

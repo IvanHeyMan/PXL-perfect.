@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | ContactSlice
   | TechListSlice
   | SeoSlice
   | DevelopmentSlice
@@ -313,14 +314,54 @@ export interface ContactSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Description field in *Contact → Primary*
+   * First field in *Contact → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: contact.primary.first
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  description: prismic.RichTextField;
+  first: prismic.KeyTextField;
+
+  /**
+   * Last field in *Contact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.primary.last
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  last: prismic.KeyTextField;
+
+  /**
+   * Email field in *Contact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Message field in *Contact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.primary.message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *Contact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
 }
 
 /**

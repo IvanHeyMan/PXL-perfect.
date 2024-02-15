@@ -35,7 +35,7 @@ const Development = ({ slice }: DevelopmentProps): JSX.Element => {
           pin: true,// pin the trigger element while active
           trigger: ".galaxy-image",
           scrub: 1,
-          markers: true,
+
         },
       });
 
@@ -44,7 +44,7 @@ const Development = ({ slice }: DevelopmentProps): JSX.Element => {
         y: 1400,
         duration: 4,
         ease: "power1.inOut",
-        markers: true,
+
       });
 
 
