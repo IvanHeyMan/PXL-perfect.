@@ -5,15 +5,15 @@ import { BsFillSendFill } from "react-icons/bs";
 
 
 
+
 export const ContactForm = () => {
     const [firstName, setfirstName] = useState('')
     const [lastName, setlastName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
-    const onSubmit = async (e: FormEvent) => {
-        e.preventDefault()
-    
+    const onSubmit = async (e:FormEvent) => {
+        e.preventDefault()  
         try {
             const res = await fetch('/api/contact', {
                 method: 'POST',

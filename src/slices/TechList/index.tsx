@@ -97,7 +97,6 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           ))}
         </div>
       ))}
-      <div className="h-[100vh]"></div>
     </section>
   );
 };

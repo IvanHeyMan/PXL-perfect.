@@ -20,7 +20,12 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <ContactForm />
+      <div className="items-center justify-center " >
+        <h1 className="text-slate-300 text-4xl py-8 md:text-7xl text-center">
+          {slice.primary.heading}
+        </h1>
+        <ContactForm />
+      </div>
     </Bounded>
   );
 };
