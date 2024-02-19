@@ -26,7 +26,7 @@ const BoundedHero = React.forwardRef<HTMLDivElement, BoundedProps>(
           src="/bg-hero3.png"
           alt="Picture of a Forest"
           fill={true}
-          quality={75}
+          quality={100}
           />
           {children}
         </div>
