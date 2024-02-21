@@ -21,10 +21,9 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
       data-slice-variation={slice.variation}
 
     >
-      <div className="h-[20vh]"></div>
       <div className="items-center justify-center" style={{backgroundImage: "url(/lady.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center",}}>
         
-        <h1 className="text-slate-300 text-4xl py-8 md:text-7xl text-center">
+        <h1 className="text-slate-300 text-6xl py-8 md:text-7xl text-center">
           {slice.primary.heading}
         </h1>
         <ContactForm />

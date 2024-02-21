@@ -1,8 +1,8 @@
-import { MIDDLEWARE_BUILD_MANIFEST } from "next/dist/shared/lib/constants";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from 'nodemailer'
 
 export async function POST(request:NextRequest) {
+    
     try {
         const {firstName, lastName, email, message} = await request.json();
 
@@ -19,6 +19,7 @@ export async function POST(request:NextRequest) {
             from: email,
             to: process.env.EMAIL_FROM,
             subject: 'New Contact Form Submission!',
+            templateId:2,
             text: `Hello,
             
             You have a new form entry from ${firstName} ${lastName} ${email}.
