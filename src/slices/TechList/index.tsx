@@ -29,10 +29,11 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       // create as many GSAP animations and/or ScrollTriggers here as you want...
       const tl = gsap.timeline({
         scrollTrigger: {
-          pin: true, // pin the trigger element while active
+          pin: false, // pin the trigger element while active
           start: "top bottom",
           end: "bottom top",
           scrub: 1,
+          
         },
       });
 
@@ -41,17 +42,17 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(800, 200)
-              : gsap.utils.random(-800, -200);
+              ? gsap.utils.random(600, 200)
+              : gsap.utils.random(-600, -200);
           },
         },
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(-800, -200)
-              : gsap.utils.random(800, 200);
+              ? gsap.utils.random(-600, -200)
+              : gsap.utils.random(600, 200);
           },
-          ease: "power1.inOut",
+          ease: "power2.inOut",
         },
       );
     }, component);
@@ -77,19 +78,19 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           className="tech-row mb-8 flex items-center justify-center gap-4 text-teal-900"
           aria-label={tech_name || ""}
         >
-          {Array.from({ length: 12 }, (_, index) => (
+          {Array.from({ length: 14 }, (_, index) => (
             <React.Fragment key={index}>
               <span
                 className={
                   "tech-item text-8xl font-extrabold uppercase tracking-tighter"
                 }
                 style={{
-                  color: index === 6 && tech_color ? tech_color : "inherit", 
+                  color: index === 7 && tech_color ? tech_color : "inherit", 
                 }}
               >
                 {tech_name}
               </span>
-              <span className="text-3xl">
+              <span className="text-5xl">
                 <BiCodeAlt />
                 {/* <MdCircle /> */}
               </span>
