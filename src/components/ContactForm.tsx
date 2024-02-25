@@ -28,14 +28,14 @@ export const ContactForm = () => {
             })
         }
         catch(err:any) {
-            console.error("Err", err)
+            console.error("Error: ", err)
         }
     };
 
     return (
         <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3" >
             <form onSubmit={onSubmit} className="md:col-start-2">
-                <input value={firstName} type="text" placeholder="First Name" className="mt-5 py-2 bg-black rounded-2xl border-2 border-teal-700 w-full h-full justify-center text-center text-5xl outline-none bg-opacity-85" onChange={(e) => setfirstName(e.target.value)}/>
+                <input value={firstName} type="text" placeholder="First Name" className="mt-5 py-2 bg-black rounded-2xl border-2 border-teal-700 w-full h-full justify-center text-center text-5xl outline-none bg-opacity-85 text-teal-600" onChange={(e) => setfirstName(e.target.value)}/>
                 <input value={lastName} type="text" placeholder="Last Name" className="mt-5 py-2 bg-black rounded-2xl border-2 border-teal-700 w-full h-full justify-center text-center text-5xl outline-none bg-opacity-85" onChange={(e) => setlastName(e.target.value)}/>
                 <input value={email} type="email" placeholder="Email" className="mt-5 py-2 bg-black rounded-2xl border-2 border-teal-700 w-full h-full justify-center text-center text-5xl outline-none bg-opacity-85" onChange={(e) => setEmail(e.target.value)}/>
                 <textarea value={message} placeholder="Message" className="mt-5 py-8 bg-black rounded-2xl border-2 border-teal-700 w-full h-full justify-center text-center text-5xl outline-none resize-none bg-opacity-85" onChange={(e) => setMessage(e.target.value)}>

@@ -21,12 +21,13 @@ const BoundedHero = React.forwardRef<HTMLDivElement, BoundedProps>(
         className={clsx("relative min-h-[110vh]", className)}
         {...restProps}
       >
-        <div className="mx-auto my-auto h-full max-h-7xl w-full max-w-7xl">
+        <div className="mx-auto my-auto h-full max-h-7xl w-full max-w-7xl ">
           <Image
           src="/bg-hero3.png"
           alt="Picture of a Forest"
           fill={true}
           quality={100}
+          objectFit="cover"
           />
           {children}
         </div>
