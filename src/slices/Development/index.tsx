@@ -32,6 +32,7 @@ const Development = ({ slice }: DevelopmentProps): JSX.Element => {
       // Create a GSAP timeline
       const tl = gsap.timeline({
         scrollTrigger: {
+          start:"30%",
           pin: true,// pin the trigger element while active
           trigger: ".galaxy-image",
           scrub: 1,
@@ -59,11 +60,11 @@ const Development = ({ slice }: DevelopmentProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className= "overflow-hidden"
     >
-      <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr] overflow-hidden galaxy-image">
-        <Heading as="h1" size="lg" className="col-start-1 md:col-start-2 md:mx-10">
+      <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr] galaxy-image">
+        <Heading as="h1"className="col-start-1 md:text-9xl -m-2">
           {slice.primary.heading}
         </Heading>
-        <div className="prose prose-xl prose-slate prose-invert col-start-1 md:col-start-2 md:mx-10">
+        <div className="prose prose-xl prose-slate prose-invert col-start-1">
           <PrismicRichText field={slice.primary.description} />
         </div>
         {/* button */}
@@ -71,7 +72,7 @@ const Development = ({ slice }: DevelopmentProps): JSX.Element => {
         {/* Cube office image styled */}
         <CubeImage
           image={slice.primary.image}
-          className="row-start-1 max-w-sm md:col-start-1 md:row-end-3"
+          className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"
         />
       </div>
       <div className="h-[50vh]"></div>

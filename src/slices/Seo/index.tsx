@@ -32,6 +32,7 @@ const Seo = ({ slice }: SeoProps): JSX.Element => {
       // Create a GSAP timeline
       const tl = gsap.timeline({
         scrollTrigger: {
+          start:"30%",
           pin: true,// pin the trigger element while active
           trigger: ".sci-fi-image",
           scrub: 1,

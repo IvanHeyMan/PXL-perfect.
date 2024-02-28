@@ -21,13 +21,14 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
       data-slice-variation={slice.variation}
 
     >
-      <div className="items-center justify-center" style={{backgroundImage: "url(/lady.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center",}}>
+      <div className="items-center justify-center" style={{backgroundImage: "url(/lady.png)", backgroundRepeat: "no-repeat", backgroundSize: "contain", backgroundPosition: "center",}}>
         
-        <h1 className="text-slate-300 text-6xl py-8 md:text-7xl text-center">
+        <h1 className="text-slate-200 text-6xl py-8 md:text-8xl text-center">
           {slice.primary.heading}
         </h1>
-        <ContactForm />
-        
+        <div className="-mb-16">
+          <ContactForm />
+        </div>
       </div>
     </Bounded>
   );
