@@ -3,7 +3,8 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import { ContactForm } from "@/components/ContactForm";
-import Image from "next/image";
+import ReactConfetti from "react-confetti";
+
 
 /**
  * Props for `Contact`.
@@ -21,8 +22,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
       data-slice-variation={slice.variation}
 
     >
-      <div className="items-center justify-center" style={{backgroundImage: "url(/lady.png)", backgroundRepeat: "no-repeat", backgroundSize: "contain", backgroundPosition: "center",}}>
-        
+      <div className="items-center justify-center min-h-[70vh] md:min-h-[70vh]" style={{backgroundImage: "url(/lady.png)", backgroundRepeat: "no-repeat", backgroundSize: "contain", backgroundPosition: "center",}}>
         <h1 className="text-slate-200 text-6xl py-8 md:text-8xl text-center">
           {slice.primary.heading}
         </h1>
@@ -36,6 +36,6 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
 
 export default Contact;
 
-//We need to make a component for Contact Form and make it server side, cause this shit is not working
+
 
 

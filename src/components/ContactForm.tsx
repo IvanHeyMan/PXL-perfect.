@@ -2,10 +2,10 @@
 import { FormEvent, useState } from "react";
 import clsx from "clsx";
 import { BsFillSendFill } from "react-icons/bs";
-import Image from "next/image";
 
 
 export const ContactForm = () => {
+    const [isSubmitted, setisSubmitted] = useState(false)
     const [firstName, setfirstName] = useState('')
     const [lastName, setlastName] = useState('')
     const [email, setEmail] = useState('')
@@ -26,13 +26,27 @@ export const ContactForm = () => {
                 "content-type" : "/application/json"
                 }
             })
+
+            if (res.status === 200) {
+                setisSubmitted(true)
+            }
         }
         catch(err:any) {
             console.error("Error: ", err)
         }
     };
 
-    return (
+    return isSubmitted ? (
+        <div className="grid grid-cols-1 justify-center items-center md:grid-cols-5 ">
+            <div className="h-[20vh]">
+
+            </div>
+            <h1 className="col-start-1 text-center text-slate-50 text-2xl md:col-start-1 md:col-span-5 md:text-8xl">
+                Thank you for your message!
+            </h1>
+            
+        </div>
+    ) : (
         <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3" >
             <form onSubmit={onSubmit} className="md:col-start-2">
                 <input value={firstName} type="text" placeholder="First Name" className="mt-5 py-2 bg-black rounded-2xl border-2 border-teal-700 w-full h-full justify-center text-center text-5xl outline-none bg-opacity-85" onChange={(e) => setfirstName(e.target.value)}/>
@@ -50,5 +64,5 @@ export const ContactForm = () => {
                 </div>
             </form>
         </div>
-    )
+        )
 }
